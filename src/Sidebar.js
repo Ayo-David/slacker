@@ -44,7 +44,7 @@ const Sidebar = (props) => {
             <hr />
             <SidebarOption Icon={ExpandMore} title="Channelless" />
             <hr />
-            <SidebarOption Icon={Add} title="Add Channel" />
+            <SidebarOption Icon={Add} title="Add Channel" addChannelOption={true} />
             {channels.map(channel => (
                 <SidebarOption title={channel.name} id={channel.id} />
             ))}
