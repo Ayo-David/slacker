@@ -5,9 +5,11 @@ import { useState } from 'react';
 import db from './firebase';
 import './Sidebar.css';
 import SidebarOption from './SidebarOption';
+import { useDataLayer } from './StateProvider';
 
 
 const Sidebar = (props) => {
+    const [{ user }] = useDataLayer();
     const [channels, setChannels] = useState([]);
 
     useEffect(() => {
@@ -27,7 +29,7 @@ const Sidebar = (props) => {
                     <h2>SchoolShell</h2>
                     <h3>
                         <FiberManualRecord />
-                        Ayo David
+                        {user?.displayName}
                     </h3>
                 </div>
                 <Create />

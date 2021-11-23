@@ -2,12 +2,14 @@ import { Avatar } from '@material-ui/core';
 import { AccessTime, HelpOutline, Search } from '@material-ui/icons';
 import React from 'react';
 import './Header.css';
+import { useDataLayer } from './StateProvider';
 
 const Header = (props) => {
-    const user = {
-        displayName: "AyoDavid",
-        photoURL: "https://"
-    }
+    const [{ user }] = useDataLayer();
+    // const user = {
+    //     displayName: "AyoDavid",
+    //     photoURL: "https://"
+    // }
     return (
         <div className="header">
             <div className="header__left">
@@ -27,6 +29,7 @@ const Header = (props) => {
 
 
             </div>
+            
         </div>
     );
 }

@@ -2,6 +2,7 @@
   background-color: var(--slack-colour);
   border-top: 1px solid #49274b;
   max-width: 260px;
+  min-width: 200px;
   color: white;
   flex: 0.3;
 }
