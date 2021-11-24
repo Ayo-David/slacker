@@ -9,26 +9,39 @@ const ChatInput = ({ channelName, channelId }) => {
     const [{ user }] = useDataLayer();
 
     const sendMessage = (e) => {
-        e.preventDefault();
+        e.preventDefault()
+
+        //  if(channelId){
+        //     let payload = {
+        //         message: input,
+        //         timestamp: firebase.firestore.Timestamp.now(),
+        //         user: user.displayName,
+        //         userImage: user.photoURL
+        //     }
+        //     db.collection("rooms").doc(channelId).collection('messages').add(payload);
+        // }
+
+        //console.log(input)
         if (channelId) {
             db.collection('rooms').doc(channelId).collection('messages').add({
                 message: input,
-                timestamp: firebase.firestore.FieldValue.serverTimestamp,
+                timestamp: firebase.firestore.Timestamp.now(),
                 user: user.displayName,
                 userImage: user.photoURL
             })
+
         }
     }
     return (
         <div className="chatInput">
-            <form>
+            <form onSubmit={sendMessage}>
                 <input
 
                     value={input}
                     onChange={e => setInput(e.target.value)}
                     placeholder={`Message #${channelName}`}
                 />
-                <button type="submit" onclick={sendMessage}>SEND</button>
+                <button type="submit" >SEND</button>
             </form>
 
         </div>

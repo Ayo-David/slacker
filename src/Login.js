@@ -4,6 +4,7 @@ import { auth, provider } from './firebase';
 import "./Login.css"
 import { actionTypes } from './reducer';
 import { useDataLayer } from './StateProvider';
+import logo from './images/logo.png'
 
 const Login = (props) => {
     const [{ user }, dispatch] = useDataLayer();
@@ -29,8 +30,8 @@ const Login = (props) => {
     return (
         <div className="login">
             <div className="login__container">
-                <img src="https://cdn.mos.cms.futurecdn.net/SDDw7CnuoUGax6x9mTo7dd-480-80.jpg.webp" alt="" />
-                <h1>Sign in to SchoolShell Slack Page</h1>
+                <img src={logo} alt="" />
+                <h1>SchoolShell Chat Room</h1>
                 <p>schoolshell.com</p>
                 <Button onClick={signIn}>SIGN IN WITH GOOGLE</Button>
             </div>

@@ -29,7 +29,6 @@ const Chat = (props) => {
     //console.log(roomMessages);
     return (
         <div className="chat">
-
             <div className="chat__header">
                 <div className="chat__headerLeft">
                     <h4 className="chat__channelName">
@@ -45,12 +44,12 @@ const Chat = (props) => {
 
             </div>
             <div className="chat__messages">
-                {roomMessages?.map(({ message, timestamp, user, userimage }) => (
+                {roomMessages?.map(({ message, timestamp, user, userImage }) => (
                     <Message
                         message={message}
                         timmestamp={timestamp}
                         user={user}
-                        userImage={userimage}
+                        userImage={userImage}
                     />
                 ))}
             </div>

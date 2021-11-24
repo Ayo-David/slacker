@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Switch, Route, } from 'react-router-dom'; //it must be in these order
 
 import './App.css';
@@ -9,7 +9,7 @@ import Login from './Login';
 import { useDataLayer } from './StateProvider';
 
 function App() {
-  //const [user, setUser] = useState(null);
+  //const [user, setUser] = useState("null");
   const [{ user }] = useDataLayer();
 
   return (
